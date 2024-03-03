@@ -1,0 +1,40 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX mapa: <http://rpcw.di.uminho.pt/2024/mapa/>
+PREFIX : <http://rpcw.di.uminho.pt/2024/mapa/>
+
+- Quais as cidades de um determinado distrito?
+
+SELECT ?cidade WHERE { 
+	?cidade rdf:type :Cidade;
+         :pertenceA :d1.
+}
+
+- Distribuição de cidades por distrito?
+
+SELECT ?distrito (COUNT (distinct ?cidade) as ?numCidades) WHERE {
+    ?cidade rdf:type :Cidade .
+    ?cidade :pertenceA ?distrito .
+}
+GROUP BY ?distrito
+ORDER BY DESC(?numCidades)
+
+- Quantas cidades se podem atingir a partir do Porto?
+
+SELECT DISTINCT ?destino WHERE {
+    ?cidade rdf:type :Cidade;
+            :pertenceA ?distrito.
+    ?distrito :nomeDistrito "Porto".
+    
+    ?ligacao rdf:type :Ligação;
+             :origem ?cidade ;
+             :destino ?destino .
+}
+
+- Quais as cidades com população acima de um determinado valor?
+
+SELECT DISTINCT ?cidade WHERE {
+    ?cidade rdf:type :Cidade;
+            :populacao ?populacao.
+            FILTER (?populacao > 64513)
+}
