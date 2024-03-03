@@ -15,7 +15,7 @@ Antes de criar a ontologia, observei o dataset fornecido e indentifiquei 3 class
 
 A script cria, para cada ligação, uma ligação inversa onde o destino original passa à origem do novo, e vice versa.
 
-As respostas às queries encontram se no ficheiro ['queries.txt'](queries.txt), e foram respondidas com recurso ao GraphDB.
+As respostas às queries encontram se no ficheiro [`queries.txt`](queries.txt), e foram respondidas com recurso ao GraphDB.
 
 Para correr a script e obter o output desejado, deve ser corrido o seguinte comando: `python3 geraTTL.py > mapaVirtual.ttl`
 
@@ -25,4 +25,4 @@ Para correr a script e obter o output desejado, deve ser corrido o seguinte coma
 - [`mapaBase.ttl`](`mapaBase.ttl): ficheiro Turtle criado através do Protege, com a estrutura base da ontologia a utilizar como base para a popular, bem como alguns exemplos de possíveis indivíduos.
 - [`geraTTL.py`](geraTTL.py): script em Python usado para popular a ontologia com indivíduos através dos dados contidos no `mapa-virtual.json`.
 - [`mapaVirtual.ttl`](mapaVirtual.ttl): ficheiro output resultante da execução da script e o resultado final da ontologia.
-- ['queries.txt'](queries.txt): ficheiro que contem as respostas às queries pedidas.
+- [`queries.txt`](queries.txt): ficheiro que contem as respostas às queries pedidas.
