@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf-8"/>
+        {% if 'n' in data[0] and 'gname' in data[0] %}
+            <title>Grupo {{data[0].n.value}} / {{data[0].gname.value}}</title>
+        {% elif 'gname' in data[0] %}
+            <title>Grupo {{data[0].gname.value}}</title>
+        {% else %}
+            <title>Grupo {{data[0].n.value}}</title>
+        {% endif %}
+        <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/w3.css') }}"/>
+    </header>
+    <body>
+        <div class="w3-card-4">
+            <header class="w3-container w3-purple">
+                {% if 'n' in data[0] and 'gname' in data[0] %}
+                    <h1>Tabela Periódica: Grupo {{data[0].n.value}} / {{data[0].gname.value}}</h1>
+                {% elif 'gname' in data[0] %}
+                    <h1>Tabela Periódica: Grupo {{data[0].gname.value}} </h1>
+                {% else %}
+                    <h1>Tabela Periódica: Grupo {{data[0].n.value}} </h1>
+                {% endif %}
+            </header>
+
+            <div class="w3-container">
+                <table class="w3-table-all">
+                    <tr>
+                        <th>Número</th>
+                        <th>Nome</th>
+                        <th>Símbolo</th>
+                    </tr>
+                    {% for entry in data %}
+                    <tr>
+                        <td><a href="/elementos/{{entry.na.value}}">{{entry.na.value}}</a></td>
+                        <td><a href="/elementos/{{entry.na.value}}">{{entry.name.value}}</a></td>
+                        <td>{{entry.simb.value}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+
+            <footer class="w3-container w3-purple">
+                <h5>Gerado por RPCW2024 em {{tempo}}</h5>
+            </footer>
+        </div>
+    </body>
+</html>
