@@ -1,0 +1,250 @@
+@prefix : <http://rpcw.di.uminho.pt/2024/cinema/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://rpcw.di.uminho.pt/2024/cinema/> .
+
+<http://rpcw.di.uminho.pt/2024/cinema> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/cinema#acted
+:acted rdf:type owl:ObjectProperty ;
+       owl:inverseOf :hasActor .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#composed
+:composed rdf:type owl:ObjectProperty ;
+          owl:inverseOf :hasComposer .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#directed
+:directed rdf:type owl:ObjectProperty ;
+          owl:inverseOf :hasDirector .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#hasActor
+:hasActor rdf:type owl:ObjectProperty ;
+          rdfs:domain :Film ;
+          rdfs:range :Person .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#hasComposer
+:hasComposer rdf:type owl:ObjectProperty ;
+             rdfs:domain :Music ;
+             rdfs:range :Person .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#hasCountry
+:hasCountry rdf:type owl:ObjectProperty ;
+            rdfs:domain :Film ;
+            rdfs:range :Country .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#hasDirector
+:hasDirector rdf:type owl:ObjectProperty ;
+             rdfs:domain :Film ;
+             rdfs:range :Person .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#hasGenre
+:hasGenre rdf:type owl:ObjectProperty ;
+          rdfs:domain :Film ;
+          rdfs:range :Genre .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#hasMusic
+:hasMusic rdf:type owl:ObjectProperty ;
+          rdfs:domain :Film ;
+          rdfs:range :Music .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#hasProducer
+:hasProducer rdf:type owl:ObjectProperty ;
+             owl:inverseOf :produced ;
+             rdfs:domain :Film ;
+             rdfs:range :Person .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#hasScreenwriter
+:hasScreenwriter rdf:type owl:ObjectProperty ;
+                 owl:inverseOf :screenwritted ;
+                 rdfs:domain :Film ;
+                 rdfs:range :Person .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#hasWriter
+:hasWriter rdf:type owl:ObjectProperty ;
+           owl:inverseOf :wrote ;
+           rdfs:domain :Book ;
+           rdfs:range :Person .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#produced
+:produced rdf:type owl:ObjectProperty .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#screenwritted
+:screenwritted rdf:type owl:ObjectProperty .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#wrote
+:wrote rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/cinema#birthDate
+:birthDate rdf:type owl:DatatypeProperty .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#date
+:date rdf:type owl:DatatypeProperty .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#description
+:description rdf:type owl:DatatypeProperty .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#duration
+:duration rdf:type owl:DatatypeProperty .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#name
+:name rdf:type owl:DatatypeProperty .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#title
+:title rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/cinema#Actor
+:Actor rdf:type owl:Class ;
+       owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :acted ;
+                                                    owl:someValuesFrom :Film
+                                                  ]
+                                                ) ;
+                             rdf:type owl:Class
+                           ] .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#Artwork
+:Artwork rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#Book
+:Book rdf:type owl:Class ;
+      rdfs:subClassOf :Artwork .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#Country
+:Country rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Class ;
+                               owl:oneOf ( :France
+                                           :Russia
+                                           :USA
+                                         )
+                             ] .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#Director
+:Director rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :directed ;
+                                                       owl:someValuesFrom :Film
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#Film
+:Film rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#Genre
+:Genre rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#Music
+:Music rdf:type owl:Class ;
+       rdfs:subClassOf :Artwork .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#Musician
+:Musician rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :composed ;
+                                                       owl:someValuesFrom :Music
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#Person
+:Person rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#Producer
+:Producer rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :produced ;
+                                                       owl:someValuesFrom :Film
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#Screenplay
+:Screenplay rdf:type owl:Class ;
+            rdfs:subClassOf :Artwork .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#Screenwriter
+:Screenwriter rdf:type owl:Class ;
+              owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :hasScreenwriter ;
+                                                           owl:someValuesFrom :Film
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] .
+
+
+###  http://rpcw.di.uminho.pt/2024/cinema#Writer
+:Writer rdf:type owl:Class ;
+        owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :wrote ;
+                                                     owl:someValuesFrom :Book
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
