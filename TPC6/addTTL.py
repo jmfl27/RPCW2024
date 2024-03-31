@@ -120,10 +120,9 @@ for movie in movies:
             g.add((genre_uri, cinema.name, Literal(genre)))
         g.add((movie_uri, cinema.hasGenre, genre_uri))
 
-    #print(len(g))
-    print(g.serialize())
-
-    #print("==============================================")
+#print(len(g))
+print(g.serialize())
+#print("==============================================")
 
 #for stmt in g:
 #    pprint.pprint(stmt)
