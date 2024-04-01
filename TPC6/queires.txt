@@ -1,0 +1,42 @@
+1. Quantos filmes existem no repositório?
+PREFIX : <http://rpcw.di.uminho.pt/2024/cinema/>
+select (COUNT(?s) as ?nfilmes) where {
+    ?s a :Film .
+}
+
+2. Qual a distribuição de filmes por ano de lançamento?
+PREFIX : <http://rpcw.di.uminho.pt/2024/cinema/>
+SELECT YEAR(CAST(?date AS xsd:date)) AS ?year, COUNT(*) AS ?count
+WHERE {
+  ?film :date ?date .
+}
+GROUP BY YEAR(CAST(?date AS xsd:date))
+ORDER BY ?year
+
+3. Qual a distribuição de filmes por género?
+PREFIX : <http://rpcw.di.uminho.pt/2024/cinema/>
+select ?genre (COUNT(?s) as ?nfilmes) where {
+    ?s a :Film .
+    ?s :hasGenre ?genre.
+} 
+GROUP BY (?genre)
+ORDER BY DESC (?nfilmes)
+
+4. Em que filmes participou o ator "Burt Reynolds"?
+PREFIX : <http://rpcw.di.uminho.pt/2024/cinema/>
+select ?s where {
+    ?s a :Film .
+    ?s :hasActor "Burt_Reynolds".
+} 
+ORDER BY DESC (?title)
+
+5. Produz uma lista de realizadores com o seu nome e o número de filmes que realizou.
+PREFIX : <http://rpcw.di.uminho.pt/2024/cinema/>
+select ?director (COUNT(?s) as ?nfilmes) where{
+    ?s a :Film .
+    ?s :hasDirector ?director.
+}
+GROUP BY (?director)
+
+6. Qual o título dos livros que aparecem associados aos filmes?
+(N/A)

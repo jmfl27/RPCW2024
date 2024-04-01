@@ -13,22 +13,47 @@ Para esse efeito, utilizei a `DBPedia` e, após analizar algumas entradas relaci
 
 ```
 PREFIX dbo: <http://dbpedia.org/ontology/>
-PREFIX dbp: <http://dbpedia.org>
+PREFIX dbp: <http://dbpedia.org/property/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT DISTINCT ?filme ?filmName ?actorName ?directorName ?writerName ?musicName ?screenName ?duration
+SELECT DISTINCT ?filme ?filmName ?description ?releaseDate ?movieCountry ?actorName ?birthDate ?birthCountry ?directorName ?producerName ?writerName ?musicName ?screenName ?duration ?genreName
 WHERE {
     ?filme a dbo:Film;
               rdfs:label ?filmName.
-   Optional {
-             ?filme dbo:starring ?actor.
-              ?actor rdfs:label ?actorName.
-              FILTER (LANG(?actorName) = 'en')
+  OPTIONAL {
+       ?filme dbo:abstract ?description.
+       FILTER (LANG(?description) = 'en')
+  }
+   OPTIONAL {
+         ?filme dbo:starring ?actor.
+          ?actor rdfs:label ?actorName.
+          OPTIONAL {
+            ?actor dbo:birthDate ?birthDate.
+          }
+          OPTIONAL {
+            ?actor dbo:birthPlace ?birthPlace.
+            ?birthPlace a dbo:Country.
+            BIND(REPLACE(STR(?birthPlace), "http://dbpedia.org/resource/", "") AS ?birthCountry)
+          }
+          FILTER (LANG(?actorName) = 'en')
    }
-   Optional {
+Optional {
+             ?filme dbo:releaseDate ?releaseDate.
+   }
+Optional {
+             ?filme dbo:country ?country.
+              ?country rdfs:label ?movieCountry.
+              FILTER (LANG(?movieCountry) = 'en')
+   }
+Optional {
              ?filme dbo:director ?director.
               ?director rdfs:label ?directorName.
               FILTER (LANG(?directorName) = 'en')
+   }
+Optional {
+             ?filme dbo:producer ?producer.
+              ?producer rdfs:label ?producerName.
+              FILTER (LANG(?producerName) = 'en')
    }
    Optional {
              ?filme dbo:writer ?writer.
@@ -47,6 +72,11 @@ WHERE {
    }
   Optional {
              ?filme dbo:runtime ?duration.
+   }
+Optional {
+             ?filme dbo:genre ?genre.
+              ?genre rdfs:label ?genreName.
+              FILTER (LANG(?genreName) = 'en')
    }
   FILTER (LANG(?filmName) = 'en')
 }

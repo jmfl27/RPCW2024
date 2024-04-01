@@ -16,12 +16,10 @@
                 <table class="w3-table-all">
                     <tr>
                         <th>Nome</th>
-                        <th>Data de Nascimento</th>
                     </tr>
                     {% for entry in data.data %}
                     <tr>
                         <td><a href="/realizadores/{{entry.directorName.value}}">{{entry.directorName.value}}</a></td>
-                        <td>{{entry.birthDate.value}}</td>
                     </tr>
                     {% endfor %}
                 </table>
