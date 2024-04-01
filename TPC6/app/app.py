@@ -19,6 +19,47 @@ def treatGroups(data):
         if "number" not in value.keys():
             value["number"] = {'datatype': 'http://www.w3.org/2001/XMLSchema#integer', 'type': 'literal', 'value': ''}
 
+def organize_film_data(sparql_response):
+    film_data = {
+        "title": None,
+        "duration": None,
+        "date": None,
+        "actors": set(),
+        "composers": set(),
+        "countries": set(),
+        "directors": set(),
+        "genres": set(),
+        "producers": set(),
+        "screenwriters": set(),
+        "writers": set()
+    }
+
+    for binding in sparql_response:
+        if "title" in binding:
+            film_data["title"] = binding["title"]["value"]
+        if "duration" in binding:
+            film_data["duration"] = binding["duration"]["value"]
+        if "date" in binding:
+            film_data["date"] = binding["date"]["value"]
+        if "actorName" in binding:
+            film_data["actors"].add(binding["actorName"]["value"])
+        if "composerName" in binding:
+            film_data["composers"].add(binding["composerName"]["value"])
+        if "countryName" in binding:
+            film_data["countries"].add(binding["countryName"]["value"])
+        if "directorName" in binding:
+            film_data["directors"].add(binding["directorName"]["value"])
+        if "genreName" in binding:
+            film_data["genres"].add(binding["genreName"]["value"])
+        if "producerName" in binding:
+            film_data["producers"].add(binding["producerName"]["value"])
+        if "screenwriterName" in binding:
+            film_data["screenwriters"].add(binding["screenwriterName"]["value"])
+        if "writerName" in binding:
+            film_data["writers"].add(binding["writerName"]["value"])
+
+    return film_data
+
 @app.route('/')
 def index():
     return render_template('index.html',data = {"data": data_iso_formatada})
@@ -98,7 +139,8 @@ def filme(titulo):
     )
     if response.status_code == 200:
         dados = response.json()["results"]["bindings"]
-        return render_template('filme.html', entry = dados, tempo = data_iso_formatada)
+        film_data = organize_film_data(dados)
+        return render_template('filme.html', film_data=film_data, tempo=data_iso_formatada)
     else:
         return render_template('empty.html', data = data_iso_formatada)
 
