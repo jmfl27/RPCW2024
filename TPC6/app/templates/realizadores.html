@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf-8"/>
+        <title>Realizadores</title>
+        <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/w3.css') }}"/>
+    </header>
+    <body>
+        <div class="w3-card-4">
+            <header class="w3-container w3-purple">
+                <h1>Cinema: Realizadores</h1>
+            </header>
+
+            <div class="w3-container">
+                <table class="w3-table-all">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Data de Nascimento</th>
+                    </tr>
+                    {% for entry in data.data %}
+                    <tr>
+                        <td><a href="/realizadores/{{entry.directorName.value}}">{{entry.directorName.value}}</a></td>
+                        <td>{{entry.birthDate.value}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+
+        <footer class="w3-container w3-purple">
+            <h5>Gerado por RPCW2024 in {{data.tempo}}</h5>
+        </footer>
+    </body>
+</html>

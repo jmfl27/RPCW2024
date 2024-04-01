@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Filme {{film_data.title}}</title>
+        <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/w3.css') }}"/>
+    </head>
+    <body>
+        <div class="w3-card-4">
+            <header class="w3-container w3-purple">
+                <h1>Cinema: {{film_data.title}}</h1>
+            </header>
+
+            <div class="w3-container">
+                <table class="w3-table-all">
+                    <tr>
+                        <th>Título</th>
+                        <td>{{film_data.title}}</td>
+                    </tr>
+                    <tr>
+                        <th>Duração</th>
+                        <td>{{film_data.duration}}</td>
+                    </tr>
+                    <tr>    
+                        <th>Data de Lançamento</th>
+                        <td>{{film_data.date}}</td>
+                    </tr>
+                    <tr>
+                        <th>Elenco</th>
+                        <td>
+                            <ul>
+                                {% for actor in film_data.actors %}  
+                                    <li><a href="/filme/{{actor}}">{{actor}}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Compositores</th>
+                        <td>
+                            <ul>
+                                {% for composer in film_data.composers %}
+                                    <li>{{composer}}</li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Países</th>
+                        <td>
+                            <ul>
+                                {% for country in film_data.countries %}
+                                    <li>{{country}}</li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Diretores</th>
+                        <td>
+                            <ul>
+                                {% for director in film_data.directors %}
+                                    <li>{{director}}</li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Gêneros</th>
+                        <td>
+                            <ul>
+                                {% for genre in film_data.genres %}
+                                    <li>{{genre}}</li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Produtores</th>
+                        <td>
+                            <ul>
+                                {% for producer in film_data.producers %}
+                                    <li>{{producer}}</li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Roteiristas</th>
+                        <td>
+                            <ul>
+                                {% for screenwriter in film_data.screenwriters %}
+                                    <li>{{screenwriter}}</li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Escritores</th>
+                        <td>
+                            <ul>
+                                {% for writer in film_data.writers %}
+                                    <li>{{writer}}</li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <footer class="w3-container w3-purple">
+                <h5>Gerado por RPCW2024 in {{tempo}}</h5>
+            </footer>
+        </div>
+    </body>
+</html>
