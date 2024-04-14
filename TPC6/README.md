@@ -37,7 +37,7 @@ Por fim, as respostas às queries encontram-se no `queries.txt`.
 
 - [`cinema.json`](cinema.json): ficheiro resultante da execução da script atualizada do TPC 5.
 
-- [`addTTL.py`](addTTL.py): script em Python usado para popular a ontologia `baseCinema.ttl` com indivíduos através dos dados contidos no `cinema.json`. Deve ser invocada através do comando: `python3 addTTL.py > cinema.ttl`.
+- [`addTTL.py`](addTTL.py): script em Python usado para popular a ontologia `baseCinema.ttl` com indivíduos através dos dados contidos no `cinema.json`.
 
 - [`baseCinema.ttl`](baseCinema.ttl): ficheiro Turtle criado através do Protege, com a estrutura base da ontologia a utilizar como base para a popular, bem como alguns exemplos de possíveis indivíduos.
 
