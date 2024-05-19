@@ -21,7 +21,7 @@ composers = []
 screenwriters = []
 genres = []
 
-with open("cinemaFast.json","r") as f:
+with open("cinema.json","r") as f:
     movies = json.load(f)
 
 for movie in movies:
