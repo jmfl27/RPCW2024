@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/w3.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .w3-form label {
+            font-weight: bold; /* Make labels bold */
+        }
+
+        .w3-button {
+            float: right; /* Float the button to the right */
+            margin-bottom: 20px; /* Add some top margin to separate from the footer */
+        }
+
+        .success-message {
+            font-weight: bold;
+            background-color: #f0f9eb; /* Pale green background color */
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #c8e6c9; /* Light green border */
+            border-radius: 5px;
+        }
+
+        .back-button {
+            background-color: #4e586d; /* Red background color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <title>Editar Diploma {{id_dip}}</title>
+</head>
+
+<body>
+    <div class="w3-card-4">
+        <header class="w3-container w3-pale-green">
+            <div class="w3-row w3-center">
+                <div class="w3-col" style="width: 80%; text-align: left;">
+                    <h1>Editar Diploma {{id_dip}}</h1>
+                </div>
+                <div class="w3-col" style="width: 20%; text-align: right; margin-top: 1%;">
+                    <button class="back-button" onclick="window.location.href='/diplomas/{{id_dip}}'"><i class="w3-icon fa fa-arrow-left"></i> Voltar</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="w3-container">
+            <form id="diplomaForm" class="w3-form" method="POST" action="{{ url_for('update_diploma', id=id_dip) }}">
+                <label for="data_publicacao">Data de Publicação:</label>
+                <input class="w3-input w3-border" type="date" id="data_publicacao" name="data_publicacao"
+                    value="{{ dados.data_publicacao }}" required>
+                <br>
+                <label for="local_publicacao">Local de Publicação:</label>
+                <input class="w3-input w3-border" type="text" id="local_publicacao" name="local_publicacao"
+                    value="{{ dados.local_publicacao.split('.')[0] }}" required>
+                <br>
+                <label for="numero_publicacao">Número de Publicação:</label>
+                <input class="w3-input w3-border" type="text" id="numero_publicacao" name="numero_publicacao"
+                    value="{{ dados.numero_publicacao }}" required>
+                <br>
+                <label for="preambulo">Preâmbulo:</label>
+                <textarea class="w3-input w3-border" id="preambulo" name="preambulo"
+                    required>{{ dados.preambulo }}</textarea>
+                <br>
+                <label for="sumario">Sumário:</label>
+                <textarea class="w3-input w3-border" id="sumario" name="sumario" required>{{ dados.sumario }}</textarea>
+                <br>
+                <label for="articulado">Articulado:</label>
+                <textarea class="w3-input w3-border" id="articulado" name="articulado"
+                    required>{{ dados.articulado }}</textarea>
+                <br>
+                <label for="dr_number">DR Number:</label>
+                <input class="w3-input w3-border" type="text" id="dr_number" name="dr_number"
+                    value="{{ dados.dr_number }}" required>
+                <br>
+                <label for="tipo">Tipo:</label>
+                <select class="w3-select w3-border" id="tipo" name="tipo" required>
+                    {% for entry in data %}
+                    <option value="{{ entry.tipo }}" {% if entry.tipo==dados.tipo %}selected{% endif %}>{{ entry.tipo }}
+                    </option>
+                    {% endfor %}
+                </select>
+                <br>
+                <br>
+                <label for="emissor">Emissor:</label>
+                <input class="w3-input w3-border" type="text" id="emissor" name="emissor"
+                    value="{{ dados.emissor | join(', ') }}" placeholder="Separate multiple entries with commas"
+                    required>
+                <br>
+                <button class="w3-button w3-pale-blue w3-border w3-margin-top" type="submit"><i class="w3-icon fa fa-upload" style="margin-right: 10px;"></i>Atualizar Diploma</button>
+            </form>
+        </div>
+
+        <footer class="w3-container w3-pale-green">
+            <h5><b>Projeto de RPCW: João Loureiro, Vasco Oliveira, Luís Fernandes e André Alves</b></h5>
+            <hr style="margin: 0; padding: 0;">
+            <h5>Página gerada em {{ data_iso_formatada }}</h5>
+        </footer>
+    </div>
+</body>
+
+<script>
+    // Replace the current history state with a new one, effectively omitting this page from the history
+    history.replaceState(null, '', location.href);
+</script>
+
+</html>

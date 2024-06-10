@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <meta charset="utf-8" />
+    <title>Diário da Republica</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/w3.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .w3-button {
+            font-weight: bold;
+        }
+    </style>
+</header>
+
+<body>
+    <div class="w3-card-4">
+        <header class="w3-container w3-pale-green">
+            <h1>Diário da Republica</h1>
+        </header>
+
+        <div class="w3-container">
+            <ul class="w3-ul">
+                <li>> <a href="/diplomas" class="w3-button w3-border-bottom"><i class="w3-icon fa fa-file" style="margin-right: 10px;"></i>Diplomas: Observar e efetuar pesqisas sobre os diplomas existentes</a></li>
+                <li>> <a href="/diplomas/form" class="w3-button w3-border-bottom"><i class="w3-icon fa fa-plus-circle" style="margin-right: 10px;"></i>Criar Diploma: Criar um novo diploma</a></li>
+                <li>> <a href="/entidades" class="w3-button w3-border-bottom"><i class="w3-icon fa fa-user" style="margin-right: 10px;"></i>Entidades Emissoras: Observar as entidades emissoras existentes</a></li>
+                <li>> <a href="/tipos" class="w3-button w3-border-bottom"><i class="w3-icon fa fa-archive" style="margin-right: 10px;"></i>Tipos: Observar tipos de diplomas existentes existentes</a></li>
+            </ul>
+        </div>
+
+        <footer class="w3-container w3-pale-green">
+            <h5><b>Projeto de RPCW: João Loureiro, Vasco Oliveira, Luís Fernandes e André Alves</b></h5>
+            <hr style="margin: 0; padding: 0;">
+            <h5>Página gerada em {{ data.data }}</h5>
+        </footer>            
+    </div>
+</body>
+
+</html>

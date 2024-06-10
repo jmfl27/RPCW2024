@@ -1,0 +1,599 @@
+@prefix : <http://rpcw.di.uminho.pt/2024/diario-republica/> .
+@prefix ns1: <http://rpcw.di.uminho.pt/2024/diario-republica/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://rpcw.di.uminho.pt/2024/diario-republica/> .
+
+<http://rpcw.di.uminho.pt/2024/diario-republica> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/emite
+:emite rdf:type owl:ObjectProperty ;
+       owl:inverseOf :emitido ;
+       rdfs:domain :Entidade_Emissora ;
+       rdfs:range :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/emitido
+:emitido rdf:type owl:ObjectProperty ;
+         rdfs:domain :Diploma ;
+         rdfs:range :Entidade_Emissora .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/publica
+:publica rdf:type owl:ObjectProperty ;
+         owl:inverseOf :publicado ;
+         rdfs:domain :Diario_da_Republica ;
+         rdfs:range :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/publicado
+:publicado rdf:type owl:ObjectProperty ;
+           rdfs:domain :Diploma ;
+           rdfs:range :Diario_da_Republica .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/referencia
+:referencia rdf:type owl:ObjectProperty ;
+            rdfs:domain :Diploma ;
+            rdfs:range :Diploma .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/articulado
+:articulado rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Diploma ;
+            rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/data_publicacao
+:data_publicacao rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Diploma ;
+                 rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/doc_type
+:doc_type rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Diploma ;
+          rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/dr_number
+:dr_number rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Diario_da_Republica ;
+           rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/entidade_emissora
+:entidade_emissora rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Entidade_Emissora ;
+                   rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/identificacao_diploma
+:identificacao_diploma rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :Diploma ;
+                       rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/local_publicacao
+:local_publicacao rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Diploma ;
+                  rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/number
+:number rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Diploma ;
+        rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/numero_publicacao
+:numero_publicacao rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Diploma ;
+                   rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/preambulo
+:preambulo rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Diploma ;
+           rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/sumario
+:sumario rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Diploma ;
+         rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/ACTA
+:ACTA rdf:type owl:Class ;
+      rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/AUTORIZAÇÃO
+:AUTORIZAÇÃO rdf:type owl:Class ;
+             rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Acordo
+:Acordo rdf:type owl:Class ;
+        rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Acordo_Colectivo
+:Acordo_Colectivo rdf:type owl:Class ;
+                  rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Acordão
+:Acordão rdf:type owl:Class ;
+         rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Acórdão_do_Supremo_Tribunal
+:Acórdão_do_Supremo_Tribunal rdf:type owl:Class ;
+                             rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Acórdão_do_Tribunal
+:Acórdão_do_Tribunal rdf:type owl:Class ;
+                     rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Adiantamento
+:Adiantamento rdf:type owl:Class ;
+              rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Alteração
+:Alteração rdf:type owl:Class ;
+           rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Alvará
+:Alvará rdf:type owl:Class ;
+        rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Anúncio
+:Anúncio rdf:type owl:Class ;
+         rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Anúncio_Rectificativo
+:Anúncio_Rectificativo rdf:type owl:Class ;
+                       rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Anúncio_de_Abertura
+:Anúncio_de_Abertura rdf:type owl:Class ;
+                     rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Anúncio_de_Concurso
+:Anúncio_de_Concurso rdf:type owl:Class ;
+                     rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Anúncio_de_Procedimento
+:Anúncio_de_Procedimento rdf:type owl:Class ;
+                         rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Assento
+:Assento rdf:type owl:Class ;
+         rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Aviso
+:Aviso rdf:type owl:Class ;
+       rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Balancete
+:Balancete rdf:type owl:Class ;
+           rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Balanço
+:Balanço rdf:type owl:Class ;
+         rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/CONTA
+:CONTA rdf:type owl:Class ;
+       rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Carta
+:Carta rdf:type owl:Class ;
+       rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Circular
+:Circular rdf:type owl:Class ;
+          rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Comunicação
+:Comunicação rdf:type owl:Class ;
+             rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Concurso_Público
+:Concurso_Público rdf:type owl:Class ;
+                  rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Contrato
+:Contrato rdf:type owl:Class ;
+          rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Convenção
+:Convenção rdf:type owl:Class ;
+           rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Convénio
+:Convénio rdf:type owl:Class ;
+          rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Decisão
+:Decisão rdf:type owl:Class ;
+         rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Declaração
+:Declaração rdf:type owl:Class ;
+            rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Decreto
+:Decreto rdf:type owl:Class ;
+         rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Decreto-Lei
+:Decreto-Lei rdf:type owl:Class ;
+             rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Decreto-Regulamentar
+:Decreto-Regulamentar rdf:type owl:Class ;
+                      rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Decreto_Regional
+:Decreto_Regional rdf:type owl:Class ;
+                  rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Decreto_do_Ministro_da_República
+:Decreto_do_Ministro_da_República rdf:type owl:Class ;
+                                  rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Decreto_do_Representante
+:Decreto_do_Representante rdf:type owl:Class ;
+                          rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Delaração_de_Retificação
+:Delaração_de_Retificação rdf:type owl:Class ;
+                          rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Deliberação
+:Deliberação rdf:type owl:Class ;
+             rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Despacho
+:Despacho rdf:type owl:Class ;
+          rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Despacho_Conjunto
+:Despacho_Conjunto rdf:type owl:Class ;
+                   rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Despacho_Interpretativo
+:Despacho_Interpretativo rdf:type owl:Class ;
+                         rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Despacho_Ministerial
+:Despacho_Ministerial rdf:type owl:Class ;
+                      rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Despacho_Normativo
+:Despacho_Normativo rdf:type owl:Class ;
+                    rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Despacho_do_Conselho
+:Despacho_do_Conselho rdf:type owl:Class ;
+                      rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Diario_da_Republica
+:Diario_da_Republica rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Diploma
+:Diploma rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Diploma_Legislativo_Colonial
+:Diploma_Legislativo_Colonial rdf:type owl:Class ;
+                              rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Diretiva
+:Diretiva rdf:type owl:Class ;
+          rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/EXTRACTO
+:EXTRACTO rdf:type owl:Class ;
+          rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Edital
+:Edital rdf:type owl:Class ;
+        rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Entidade_Emissora
+:Entidade_Emissora rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Errata
+:Errata rdf:type owl:Class ;
+        rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Instrução
+:Instrução rdf:type owl:Class ;
+           rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Jurisprudência
+:Jurisprudência rdf:type owl:Class ;
+                rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Lei
+:Lei rdf:type owl:Class ;
+     rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Lista
+:Lista rdf:type owl:Class ;
+       rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Louvor
+:Louvor rdf:type owl:Class ;
+        rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Mapa
+:Mapa rdf:type owl:Class ;
+      rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Mapa_Oficial
+:Mapa_Oficial rdf:type owl:Class ;
+              rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Mensagem_do_Presidente_da_República
+:Mensagem_do_Presidente_da_República rdf:type owl:Class ;
+                                     rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Modelo
+:Modelo rdf:type owl:Class ;
+        rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Modelos_de_Impressos
+:Modelos_de_Impressos rdf:type owl:Class ;
+                      rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Moção
+:Moção rdf:type owl:Class ;
+       rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Norma
+:Norma rdf:type owl:Class ;
+       rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Norma_Regulamentar
+:Norma_Regulamentar rdf:type owl:Class ;
+                    rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Nota
+:Nota rdf:type owl:Class ;
+      rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Não_especificado
+:Não_especificado rdf:type owl:Class ;
+                  rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Ordem
+:Ordem rdf:type owl:Class ;
+       rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Orçamento
+:Orçamento rdf:type owl:Class ;
+           rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Parecer
+:Parecer rdf:type owl:Class ;
+         rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Portaria
+:Portaria rdf:type owl:Class ;
+          rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Processo
+:Processo rdf:type owl:Class ;
+          rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Proclamação
+:Proclamação rdf:type owl:Class ;
+             rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Programa
+:Programa rdf:type owl:Class ;
+          rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Protocolo
+:Protocolo rdf:type owl:Class ;
+           rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Quadro
+:Quadro rdf:type owl:Class ;
+        rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Recomendação
+:Recomendação rdf:type owl:Class ;
+              rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Recurso
+:Recurso rdf:type owl:Class ;
+         rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Regimento
+:Regimento rdf:type owl:Class ;
+           rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Regulamento
+:Regulamento rdf:type owl:Class ;
+             rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Relatório
+:Relatório rdf:type owl:Class ;
+           rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Relação
+:Relação rdf:type owl:Class ;
+         rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Resolução
+:Resolução rdf:type owl:Class ;
+           rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Resolução_da_Assembleia
+:Resolução_da_Assembleia rdf:type owl:Class ;
+                         rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Resolução_do_Conselho
+:Resolução_do_Conselho rdf:type owl:Class ;
+                       rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Resolução_do_Conselho_de_Ministros
+:Resolução_do_Conselho_de_Ministros rdf:type owl:Class ;
+                                    rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Resultado
+:Resultado rdf:type owl:Class ;
+           rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Retificação
+:Retificação rdf:type owl:Class ;
+             rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Sentença
+:Sentença rdf:type owl:Class ;
+          rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Sistema_de_Qualificação
+:Sistema_de_Qualificação rdf:type owl:Class ;
+                         rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Tabela
+:Tabela rdf:type owl:Class ;
+        rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Tratado
+:Tratado rdf:type owl:Class ;
+         rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Édito
+:Édito rdf:type owl:Class ;
+       rdfs:subClassOf :Diploma .
+
+
+###  http://rpcw.di.uminho.pt/2024/diario-republica/Doc_Types_Distintos:
+:Doc_Types_Distintos: rdf:type owl:Class ;
+                      rdfs:subClassOf :Diploma .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members rdf:nil
+] .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

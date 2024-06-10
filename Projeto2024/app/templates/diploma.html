@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/w3.css')}}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .w3-form label {
+            font-weight: bold; /* Make labels bold */
+        }
+
+        .w3-button {
+            float: right; /* Float the button to the right */
+            margin-bottom: 20px; /* Add some top margin to separate from the footer */
+        }
+
+        .success-message {
+            font-weight: bold;
+            background-color: #f0f9eb; /* Pale green background color */
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #c8e6c9; /* Light green border */
+            border-radius: 5px;
+        }
+
+        .back-button {
+            background-color: #4e586d; /* Red background color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <title>{{data.data.identificacao}}</title>
+</head>
+
+<body>
+    <div class="w3-card-4">
+        <header class="w3-container w3-pale-green">
+            <div class="w3-row w3-center">
+                <div class="w3-col" style="width: 80%; text-align: left;">
+                    <h1>{{data.data.identificacao}}</h1>
+                </div>
+                <div class="w3-col" style="width: 20%; text-align: right; margin-top: 1%;">
+                    <button class="back-button" onclick="goBack()"><i class="w3-icon fa fa-arrow-left"></i> Voltar</button>
+                </div>
+            </div>
+        </header>
+
+        <script>
+            function goBack() {
+                if (window.history.length > 1) {
+                    window.history.back();
+                } else {
+                    window.location.href = '/';
+                }
+            }
+        </script>
+
+        {% if request.args.get('success') == 'true' %}
+        <div>
+            <p>Diploma atualizado com sucesso!</p>
+        </div>
+        {% endif %}
+
+        <div class="w3-container">
+            <ul class="w3-ul">
+                <li><strong>Data de Publicação:</strong> {{data.data.data_publicacao}}</li>
+                <li><strong>Identificação:</strong> {{data.data.identificacao}}</li>
+                <li><strong>Local de Publicação:</strong> {{data.data.local_publicacao}}</li>
+                <li><strong>Número de Publicação:</strong> {{data.data.numero_publicacao}}</li>
+                <li><strong>Emissor:</strong>
+                    {% for emissor in data.data.emissor %}
+                    <a href="/entidades/{{ emissor }}">{{ emissor }}</a>{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                </li>
+                <li><strong>Número DR:</strong> {{data.data.dr_number}}</li>
+                <li><strong>Preâmbulo:</strong> {{data.data.preambulo}}</li>
+                <li><strong>Articulado:</strong>
+                    {% if data.data.articulado %}
+                    <a href="{{data.data.articulado}}">{{data.data.articulado}}</a>
+                    {% else %}
+                    N/E
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
+
+        <div class="w3-container">
+            <p><strong>Sumário</strong></p>
+            <p class="w3-left-align">{{data.data.sumario}}</p>
+        </div>
+
+        <div class="w3-container w3-padding">
+            <a href="/diplomas/edit/{{data.id_dip}}" class="w3-button w3-blue w3-margin-right"><i class="w3-icon fa fa-edit" style="margin-right: 10px;"></i>Editar Diploma</a>
+            <form id="deleteForm" method="POST" action="/delete_diploma/{{data.id_dip}}">
+                <button class="w3-button w3-red w3-margin-right" type="button" onclick="confirmDelete()"><i class="w3-icon fa fa-trash" style="margin-right: 10px;"></i>Apagar
+                    Diploma</button>
+            </form>
+        </div>
+
+
+        <footer class="w3-container w3-pale-green">
+            <h5><b>Projeto de RPCW: João Loureiro, Vasco Oliveira, Luís Fernandes e André Alves</b></h5>
+            <hr style="margin: 0; padding: 0;">
+            <h5>Página gerada em {{ data.tempo }}</h5>
+        </footer>
+    </div>
+
+    <script>
+        function confirmDelete() {
+            if (confirm("Tem certeza de que deseja apagar este diploma?")) {
+                document.getElementById("deleteForm").submit();
+            }
+        }
+    </script>
+</body>
+
+</html>

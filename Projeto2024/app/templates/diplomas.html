@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/w3.css')}}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .w3-form label {
+            font-weight: bold; /* Make labels bold */
+        }
+
+        .w3-button {
+            float: right; /* Float the button to the right */
+            margin-bottom: 20px; /* Add some top margin to separate from the footer */
+        }
+
+        .success-message {
+            font-weight: bold;
+            background-color: #f0f9eb; /* Pale green background color */
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #c8e6c9; /* Light green border */
+            border-radius: 5px;
+        }
+
+        .back-button {
+            background-color: #4e586d; /* Red background color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <title>Diplomas</title>
+
+</head>
+
+<body>
+    <div class="w3-card-4">
+        <header class="w3-container w3-pale-green">
+            <div class="w3-row w3-center">
+                <div class="w3-col" style="width: 80%; text-align: left;">
+                    <h1>Diário da Republica: Diplomas</h1>
+                </div>
+                <div class="w3-col" style="width: 20%; text-align: right; margin-top: 1%;">
+                    <button class="back-button" onclick="window.location.href='/'"><i class="w3-icon fa fa-arrow-left"></i> Voltar</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="w3-container w3-margin-top">
+            <form action="/diplomas" method="GET" class="w3-row-padding">
+                <div class="w3-third">
+                    <select style="width: 100%" name="category" id="category" class="w3-select w3-border" value={{data.category}}>
+                        <option value="identificacao_diploma">Nome do Diploma</option>
+                        <option value="data_publicacao">Data de Publicação</option>
+                        <option value="numero_publicacao">Número de Publicação</option>
+                        <option value="local_publicacao">Local de Publicação</option>
+                        <option value="entidade_emissora">Entidade Emissora</option>
+                        <option value="preambulo">Preâmbulo</option>
+                        <option value="sumario">Sumario</option>
+                        <option value="articulado">Articulado</option>
+                    </select>
+                </div>
+                <div class="w3-third">
+                    {% if data.query and data.query != 'None' %}
+                    <input id="input" type="text" name="query" placeholder="Introduza texto a pesquisar..."
+                        class="w3-input w3-border" value={{data.query}}>
+                    {% else %}
+                    <input id="input"  type="text" name="query" placeholder="Introduza texto a pesquisar..."
+                        class="w3-input w3-border">
+                    {% endif %}
+                </div>
+                <div class="w3-third" style="display: flex;">
+                    <button type="submit" style="flex: 0.2;" class="w3-button w3-blue" style="margin-left: 10px;"><i class="w3-icon fa fa-search" style="margin-right: 10px;"></i>Pesquisar</button>
+                </div>
+            </form>
+        </div>
+        
+        
+        
+
+        <table class="w3-table-all">
+            <tr>
+                <th>Nome do Diploma</th>
+                <th>Data de publicação</th>
+            </tr>
+            {% for entry in data.data %}
+            <tr>
+                <td><a href="/diplomas/{{entry.diploma_id}}">{{entry.identificacao}}</a></td>
+                <td>{{entry.data_publicacao}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <div class="w3-container w3-margin-top w3-center">
+            {% if data.buttons|length == 2 %}
+                <div class="w3-bar">
+                    <a id="prev_page" href="{{data.buttons[1]}}" class="w3-bar-item"><button class="w3-button w3-deep-purple">Página {{data.prev_page}}</button></a>
+                    <a id="next_page" href="{{data.buttons[0]}}" class="w3-bar-item"><button class="w3-button w3-deep-purple">Página {{data.next_page}}</button></a>
+                </div>
+            {% elif data.buttons|length == 0 %}
+                <p></p>
+            {% else %}
+                <div class="w3-bar w3-center">
+                    <a id="prev_page" href="{{data.buttons}}" class="w3-bar-item"><button class="w3-button w3-deep-purple">Página {{data.prev_page}}</button></a>
+                </div>
+            {% endif %}
+        </div>
+        
+        
+
+        <footer class="w3-container w3-pale-green">
+            <h5><b>Projeto de RPCW: João Loureiro, Vasco Oliveira, Luís Fernandes e André Alves</b></h5>
+            <hr style="margin: 0; padding: 0;">
+            <h5>Página gerada em {{ data.tempo }}</h5>
+        </footer>
+    </div>
+</body>
+
+</html>

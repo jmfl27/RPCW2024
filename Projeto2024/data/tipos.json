@@ -1,0 +1,374 @@
+{
+  "outros": [
+    "ACTA",
+    "AUTORIZAÇÃO",
+    "Alteração",
+    "CONTA",
+    "Circular",
+    "Concurso Público",
+    "Convenção",
+    "Delaração de Retificação",
+    "Diploma Legislativo Colonial",
+    "EXTRACTO",
+    "Errata",
+    "Jurisprudência",
+    "Mensagem do Presidente da República",
+    "Modelo",
+    "Modelos de Impressos",
+    "Nota",
+    "Proclamação",
+    "Programa",
+    "Quadro",
+    "Relação",
+    "Tratado"
+  ],
+  "Não especificado": [
+    "",
+    "(Não especificado)",
+    "(Sem diploma)",
+    "NÃO ESPECIFICADO"
+  ],
+  "Anúncio": [
+    "ANÚNCIO",
+    "ANÚNCIO-EXTRACTO",
+    "Anúncio",
+    "Anúncio (extracto)",
+    "Anúncio (extrato)",
+    "Anúncio Periódico Indicativo",
+    "Anúncio de Adjudicação do Contrato"
+  ],
+  "Anúncio Rectificativo": ["Anúncio Rectificativo", "Anúncio Retificativo"],
+  "Anúncio de Procedimento": [
+    "Anúncio de procedimento",
+    "Anúncio de procedimento "
+  ],
+  "Anúncio de Concurso": [
+    "Anúncio de Concurso",
+    "Anúncio de Concurso de Concepção",
+    "Anúncio de Concurso de Conceção",
+    "Anúncio de concurso urgente"
+  ],
+  "Anúncio de Abertura": [
+    "Anúncio de Abertura de Concurso",
+    "Anúncio de Abertura de Procedimento",
+    "Anúncio de Abertura do Concurso"
+  ],
+  "Adiantamento": ["ADITAMENTO", "Aditamento"],
+  "Assento": ["ASSENTO", "Assento"],
+  "Acordo": ["ACORDO", "Acordo", "Acordo de Gestão", "Acordo de adesão"],
+  "Acordo Colectivo": [
+    "ACORDO COLECTIVO DE TRABALHO",
+    "Acordo Colectivo de Trabalho",
+    "Acordo Coletivo de Trabalho",
+    "Acordo Coletivo de Trabalho (extrato)"
+  ],
+  "Acordão": [
+    "ACÓRDÃO",
+    "Acórdão",
+    "Acórdão (extracto)",
+    "Acórdão (extrato)",
+    "Acórdão doutrinário"
+  ],
+  "Acórdão do Tribunal": [
+    "Acórdão do Tribunal Constitucional",
+    "Acórdão do Tribunal de Contas"
+  ],
+  "Acórdão do Supremo Tribunal": [
+    "Acórdão do Supremo Tribunal Administrativo",
+    "Acórdão do Supremo Tribunal de Justiça"
+  ],
+  "Aviso": [
+    "AVISO",
+    "AVISO-EXTRACTO",
+    "Aviso",
+    "Aviso (extracto)",
+    "Aviso (extrato",
+    "Aviso (extrato)",
+    "Aviso (extrato) n.º ,/2014",
+    "Aviso Retificativo",
+    "Aviso de Concurso",
+    "Aviso de Contumácia",
+    "Aviso de Nomeação",
+    "Aviso de prorrogação de prazo",
+    "Aviso do Banco de Portugal"
+  ],
+  "Balanço": ["Balanço", "Balanço (extracto)", "Balanço (extrato)"],
+  "Balancete": ["Balancete", "Balancete (extracto)"],
+  "Comunicação": [
+    "COMUNICAÇÃO DE RENÚNCIA",
+    "Comunicação",
+    "Comunicação de Renúncia"
+  ],
+  "Convénio": ["CONVÉNIO", "Convénio"],
+  "Despacho": [
+    "DESPACHO",
+    "DESPACHO ORIENTADOR",
+    "DESPACHO RECTIFICATIVO",
+    "DESPACHO REGULADOR",
+    "DESPACHO REITORAL",
+    "DESPACHO-EXTRACTO",
+    "Despacho",
+    "Despacho (extracto)",
+    "Despacho (extrato)",
+    "Despacho Regional",
+    "Despachos (Extratos)"
+  ],
+  "Despacho Interpretativo": [
+    "DESPACHO INTERPRETATIVO",
+    "Despacho Interpretativo"
+  ],
+  "Despacho Ministerial": [
+    "DESPACHO MINISTERIAL",
+    "DESPACHO MINISTERIAL CONJUNTO",
+    "Despacho Ministerial",
+    "Despacho Ministerial Conjunto"
+  ],
+  "Despacho Conjunto": [
+    "DESPACHO CONJUNTO",
+    "DESPACHO CONJUNTO REGULAMENTAR",
+    "Despacho Conjunto",
+    "Despacho Conjunto Regulamentar"
+  ],
+  "Despacho do Conselho": [
+    "Despacho do Conselho Superior de Defesa Nacional",
+    "Despacho do Conselho de Ministros"
+  ],
+  "Despacho Normativo": [
+    "DESPACHO NORMATIVO",
+    "DESPACHO NORMATIVO-EXTRACTO",
+    "Despacho Normativo",
+    "Despacho Normativo (extracto)",
+    "Despacho Normativo (extrato)"
+  ],
+  "Declaração": [
+    "DECLARAÇÃO",
+    "DECLARAÇÃO DE DÍVIDA",
+    "DECLARAÇÃO DE RECTIFICAÇÃO",
+    "DECLARAÇÃO DE RECTIFICAÇÃO (EXTRACTO)",
+    "DECLARAÇÃO-EXTRACTO",
+    "Declaração",
+    "Declaração (extracto)",
+    "Declaração (extrato)",
+    "Declaração de R\\etificação",
+    "Declaração de Rectificação",
+    "Declaração de Rectificação (extracto)",
+    "Declaração de Retificação",
+    "Declaração de Retificação (extrato)",
+    "Declaração de rectificação de anúncio",
+    "Declaração de retificação de anúncio",
+    "Declarações"
+  ],
+  "Decreto": [
+    "DECRETO",
+    "Decreto",
+    "Decreto de Aprovação da Constituição",
+    "Decreto do Governo",
+    "Decreto do Presidente da República"
+  ],
+  "Decreto Regional": [
+    "DECRETO LEGISLATIVO REGIONAL",
+    "Decreto Legislativo Regional",
+    "DECRETO REGIONAL",
+    "Decreto Regional"
+  ],
+  "Decreto do Ministro da República": [
+    "Decreto do Ministro da República",
+    "Decreto do Ministro da República para a Região Autónoma da Madeira",
+    "Decreto do Ministro da República para a Região Autónoma dos Açores"
+  ],
+  "Decreto do Representante": [
+    "Decreto do Representante da República para a Região Autónoma da Madeira",
+    "Decreto do Representante da República para a Região Autónoma dos Açores"
+  ],
+  "Decreto-Lei": ["Decreto-Lei", "DECRETO LEI"],
+  "Decreto-Regulamentar": [
+    "DECRETO REGULAMENTAR",
+    "DECRETO REGULAMENTAR REGIONAL",
+    "Decreto Regulamentar",
+    "Decreto Regulamentar Regional"
+  ],
+  "Norma": ["NORMA", "Norma"],
+  "Norma Regulamentar": [
+    "NORMA REGULAMENTAR",
+    "Norma regulamentar da Autoridade de Supervisão de Seguros e Fundos de Pensões",
+    "Norma regulamentar do Instituto de Seguros de Portugal",
+    "Normas Regulamentares"
+  ],
+  "Regulamento": [
+    "REGULAMENTO",
+    "REGULAMENTO INTERNO",
+    "REGULAMENTO-EXTRACTO",
+    "Regulamento",
+    "Regulamento (extracto)",
+    "Regulamento (extrato)",
+    "Regulamento Interno",
+    "Regulamento da CMVM",
+    "Regulamento de extensão"
+  ],
+  "Resolução": [
+    "RESOLUÇÃO",
+    "Resolução",
+    "Resolução (extracto)",
+    "Resolução (extrato)",
+    "Resolução do Congresso da República",
+    "Resolução do Tribunal de Contas"
+  ],
+  "Resolução da Assembleia": [
+    "RESOLUÇÃO DA ASSEMBLEIA NACIONAL",
+    "Resolução da Assemblea Nacional",
+    "Resolução da Assembleia Legislativa Regional",
+    "Resolução da Assembleia Legislativa Regional dos Açores",
+    "Resolução da Assembleia Legislativa da Região Autónoma da Madeira",
+    "Resolução da Assembleia Legislativa da Região Autónoma dos Açores",
+    "Resolução da Assembleia Nacional",
+    "Resolução da Assembleia Regional",
+    "Resolução da Assembleia da República",
+    "Resolução de Assembleia Regional"
+  ],
+  "Resolução do Conselho": [
+    "Resolução do Conselho Corporativo",
+    "Resolução do Conselho da Revolução"
+  ],
+  "Resolução do Conselho de Ministros": [
+    "Resolução de Conselho de Ministros",
+    "Resolução do Conselho de Ministros",
+    "Resolução do Conselho de Ministros para os Assuntos Económicos"
+  ],
+  "Mapa": ["MAPA", "MAPA-EXTRACTO", "Mapa", "Mapa (extracto)"],
+  "Mapa Oficial": [
+    "MAPA OFICIAL",
+    "Mapa Oficial",
+    "Mapa Oficial (Açores)",
+    "Mapa Oficial (Madeira)"
+  ],
+  "Contrato": [
+    "CONTRATO",
+    "CONTRATO-EXTRACTO",
+    "Contrato",
+    "Contrato (extracto)",
+    "Contrato (extrato)",
+    "Contratos"
+  ],
+  "Carta": [
+    "CARTA CONSTITUCIONAL",
+    "CARTA DE ADESÃO",
+    "CARTA DE CONFIRMAÇÃO E RATIFICAÇÃO DE CONVENÇÃO INTERNACIONAL",
+    "CARTA DE LEI",
+    "Carta de Adesão",
+    "Carta de Confirmação e Ratificação",
+    "Carta de Ratificação"
+  ],
+  "Decisão": [
+    "DECISÃO",
+    "Decisão",
+    "Decisão (extracto)",
+    "Decisão (extrato)",
+    "Decisão do Conselho de Ministros"
+  ],
+  "Deliberação": [
+    "DELIBERAÇÃO",
+    "DELIBERAÇÃO-EXTRACTO",
+    "Deliberação",
+    "Deliberação (extracto)",
+    "Deliberação (extrato)",
+    "Deliberação da Assembleia da República",
+    "Deliberações"
+  ],
+  "Instrução": ["INSTRUÇÃO", "INSTRUÇÕES", "Instrução", "Instruções"],
+  "Lei": ["LEI", "LEI ORGÂNICA", "Lei", "Lei Constitucional", "Lei Orgânica"],
+  "Lista": [
+    "LISTA RECTIFICATIVA",
+    "LISTAGEM",
+    "LISTAGEM-EXTRACTO",
+    "Lista",
+    "Listagem",
+    "Listagem (extracto)",
+    "Listagem (extrato)"
+  ],
+  "Louvor": ["LOUVOR", "Louvor", "Louvor (extracto)", "Louvor (extrato)"],
+  "Moção": [
+    "MOÇÃO",
+    "MOÇÃO DE CONFIANÇA",
+    "Moção",
+    "Moção de Censura",
+    "Moção de Confiança",
+    "Moção de Rejeição"
+  ],
+  "Parecer": [
+    "PARECER",
+    "Parecer",
+    "Parecer (extrato)",
+    "Parecer da Procuradoria Geral da República",
+    "Parecer do Conselho de Estado",
+    "Parecer do Director-Geral da Contabilidade Pública",
+    "Parecer n.º ???/2003"
+  ],
+  "Portaria": [
+    "PORTARIA",
+    "PORTARIA-EXTRACTO",
+    "Portaria",
+    "Portaria (extracto)",
+    "Portaria (extrato)"
+  ],
+  "Protocolo": [
+    "PROTOCOLO",
+    "PROTOCOLO-EXTRACTO",
+    "Protocolo",
+    "Protocolo (extracto)",
+    "Protocolo de acordo"
+  ],
+  "Resultado": [
+    "Resultado do Concurso de Concepção",
+    "Resultado do Concurso de Conceção"
+  ],
+  "Relatório": [
+    "RELATÓRIO",
+    "Relatório",
+    "Relatório (extracto)",
+    "Relatório (extrato)"
+  ],
+  "Regimento": [
+    "REGIMENTO",
+    "Regimento",
+    "Regimento da Assembleia da República",
+    "Regimento do Conselho de Estado"
+  ],
+  "Retificação": [
+    "RECTIFICAÇÃO",
+    "Rectificação",
+    "Rectificação (extracto)",
+    "Rectificação de contumácia",
+    "Retificação",
+    "Nova Publicação (Rectificação)"
+  ],
+  "Édito": ["Édito", "Édito (extracto)", "Édito (extrato)", "Éditos"],
+  "Orçamento": ["Orçamento", "Orçamento Ordinário", "Orçamento Suplementar"],
+  "Edital": ["EDITAL", "Edital", "Edital (extracto)", "Edital (extrato)"],
+  "Diretiva": [
+    "DIRECTIVA",
+    "DIRECTIVA CONTABILÍSTICA",
+    "DIRETIVA-EXTRATO",
+    "Directiva",
+    "Directiva (extracto)",
+    "Directiva da AACS",
+    "Diretiva",
+    "Diretiva (extrato)"
+  ],
+  "Alvará": [
+    "Alvará",
+    "Alvará (extracto)",
+    "Alvará (extrato)",
+    "ALVARÁ",
+    "ALVARÁ-EXTRACTO"
+  ],
+  "Recurso": ["RECURSO", "Recurso"],
+  "Recomendação": ["RECOMENDAÇÃO", "Recomendação"],
+  "Sentença": ["Sentença", "Sentença (extrato)"],
+  "Processo": ["PROCESSO", "Processo"],
+  "Sistema de Qualificação": [
+    "Sistema de Qualificação",
+    "Sistema de Qualificação - Setores Especiais"
+  ],
+  "Tabela": ["Tabela", "Tabela de preços"],
+  "Ordem": ["Ordem da Armada", "Ordem do Exercito"]
+}
